@@ -11,9 +11,9 @@ class Movie {
         $this->vote = $_vote;
     }
 
-    public function getMovieAge($year){
+    public function getMovieAge(){
         $currenYear = date("Y");
-        return $currenYear - $year;
+        return $currenYear - $this->year;
     }
 }
 
@@ -40,7 +40,7 @@ $seven = new Movie('Se7en', 1995, 8.6);
         <?php echo $avengers->year ?>
     </span>
     <span>
-        (This movie is <?php echo $avengers->getMovieAge($avengers->year) ?> years old)
+        (This movie is <?php echo $avengers->getMovieAge() ?> years old)
     </span>
     <p>
         Vote: <?php echo $avengers->vote ?>
@@ -55,7 +55,7 @@ $seven = new Movie('Se7en', 1995, 8.6);
         <?php echo $seven->year ?>
     </span>
     <span>
-        (This movie is <?php echo $seven->getMovieAge($seven->year) ?> years old)
+        (This movie is <?php echo $seven->getMovieAge() ?> years old)
     </span>
     <p>
         Vote: <?php echo $seven->vote ?>
